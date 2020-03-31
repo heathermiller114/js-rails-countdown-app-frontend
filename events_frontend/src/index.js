@@ -9,6 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const newEvent = new Event(event);
             // console.log(newEvent)
             document.querySelector('#events-list').innerHTML += newEvent.renderEventItem();
-            })
+            });
       });
   });
