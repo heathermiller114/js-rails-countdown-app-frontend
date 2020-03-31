@@ -5,9 +5,8 @@ class Event {
         this.date = data.date
         Event.all.push(this);
     }
-}
 
-    function renderEventItem() {
+    renderEventItem() {
         return `
         <li>
             <h3>${this.name}
