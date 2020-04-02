@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(json => {
         json.forEach(event => {
             let newEvent = new Event(event);
-            // console.log(newEvent.renderEventItem())
+            console.log(newEvent.renderEventItem())
             document.querySelector('#events-list').innerHTML += newEvent.prototype.renderEventItem()
             });
       });
