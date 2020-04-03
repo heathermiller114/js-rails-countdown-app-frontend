@@ -5,10 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(endPoint)
       .then(res => res.json())
       .then(json => {
-        json.forEach(event => {
+        console.log(json)
+        json.forEach(function(event) {
+            console.log(event)
             let newEvent = new Event(event);
-            console.log(newEvent.renderEventItem())
-            document.querySelector('#events-list').innerHTML += newEvent.prototype.renderEventItem()
+            console.log(newEvent) //-- newEvent seems to be undefined?
+            document.querySelector('#events-list').innerHTML += newEvent.renderEventItem();
             });
       });
   });
