@@ -12,6 +12,7 @@ class Event {
             <h3>${this.name}
                 <button data-id=${this.id}>edit</button>
             </h3>
+            <h4> Countdown: [countdown timer] until ${this.date}</h4>
         </li>`;
     }
 }
