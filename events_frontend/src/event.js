@@ -19,6 +19,22 @@ class Event {
     static findById(id) {
         return this.all.find(event => event.id === id)
     }
+
+    renderUpdateForm() {
+        return `
+        <form data-id=${this.id}>
+            <label>Name</label>
+            <p>
+                <input type="text" value="${this.name}" />
+            </p>
+            <label>Date</label>
+            <p>
+                <input type="text" value="${this.date} />
+            </p>
+            <button type='submit'>Save Event</button>
+        </form>
+        `
+    }
 }
 
 Event.all = [];
