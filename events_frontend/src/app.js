@@ -5,6 +5,7 @@ class App {
             console.log(id)
             const event = Event.findById(id)
             console.log(event)
+            document.querySelector('#update').innerHTML = event.renderUpdateForm()
         })
     }
 }
