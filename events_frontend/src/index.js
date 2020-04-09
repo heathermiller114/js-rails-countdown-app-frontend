@@ -4,9 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const app = new App();
     console.log(app)
     app.attachEventListeners();
-// })
 
-// document.addEventListener('DOMContentLoaded', () => {
     const endPoint = 'http://localhost:3000/api/v1/events';
     fetch(endPoint)
       .then(res => res.json())
@@ -15,11 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
         json.forEach(function(event) {
             console.log(event)
             let newEvent = new Event(event);
-            console.log(newEvent) //-- newEvent seems to be undefined?
+            console.log(newEvent)
             document.querySelector('#events-list').innerHTML += newEvent.renderEventItem();
             });
       });
-    //   const app = new App();
-    //   console.log(app)
-    //   app.attachEventListeners();
   });
