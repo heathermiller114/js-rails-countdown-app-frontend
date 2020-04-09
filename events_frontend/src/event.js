@@ -15,6 +15,10 @@ class Event {
             <h4> Countdown: [countdown timer] until ${this.date}</h4>
         </li>`;
     }
+
+    static findById(id) {
+        return this.all.find(event => event.id === id)
+    }
 }
 
 Event.all = [];
