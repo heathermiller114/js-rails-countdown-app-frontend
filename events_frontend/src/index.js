@@ -1,9 +1,9 @@
 const endPoint = 'http://localhost:3000/api/v1/events'
 
 document.addEventListener('DOMContentLoaded', () => {
-    const app = new App();
-    console.log('hello')
-    app.attachEventListeners();
+    // const app = new App();
+    // console.log(app)
+    // app.attachEventListeners();
 // })
 
 // document.addEventListener('DOMContentLoaded', () => {
@@ -19,4 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('#events-list').innerHTML += newEvent.renderEventItem();
             });
       });
+      const app = new App();
+      console.log(app)
+      app.attachEventListeners();
   });
