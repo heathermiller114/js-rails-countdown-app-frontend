@@ -29,7 +29,7 @@ class Event {
             </p>
             <label>Date</label>
             <p>
-                <input type="text" value="${this.date} />
+                <input type="text" value="${this.date}" />
             </p>
             <button type='submit'>Save Event</button>
         </form>
