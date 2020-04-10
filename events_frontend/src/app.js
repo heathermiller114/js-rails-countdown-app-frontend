@@ -10,14 +10,22 @@ class App {
         
         document.querySelector('#update').addEventListener('submit', e => {
             e.preventDefault();
-            // console.log(e)
             const id = parseInt(e.target.dataset.id)
             const event = Event.findById(id)
-            // console.log(event)
             const name = e.target.querySelector('input').value
-            // console.log(name)
             const date = e.target.getElementsByTagName('p')[1].querySelector('input').value
-            console.log(date)
+
+            const bodyJSON = {name, date}
+            fetch(`http://localhost:3000/api/v1/events/${event.id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify(bodyJSON),
+            })
+                .then(res => res.json())
+                .then(updatedEvent => console.log(updatedEvent))
         })
     }
 
