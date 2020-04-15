@@ -9,10 +9,10 @@ class Event {
     renderEventItem() {
         return `
         <li>
-            <h3>${this.name}
+            <h3 data-id=${this.id}>${this.name}
                 <button data-id=${this.id}>edit</button>
             </h3>
-            <h4> Countdown: [countdown timer] until ${this.date}</h4>
+            <h4 data-id=${this.id}> Countdown: [countdown timer] until ${this.date}</h4>
         </li>`;
     }
 
@@ -34,6 +34,11 @@ class Event {
             <button type='submit'>Save Event</button>
         </form>
         `
+    }
+
+    update({ name, date }) {
+        this.name  = name;
+        this.content = content
     }
 }
 
