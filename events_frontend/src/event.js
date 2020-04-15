@@ -38,7 +38,7 @@ class Event {
 
     update({ name, date }) {
         this.name  = name;
-        this.content = content
+        this.date = date;
     }
 }
 
