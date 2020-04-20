@@ -11,9 +11,9 @@ class App {
     attachEventListeners() {
         document.querySelector('#events-list').addEventListener('click', e => {
             if (e.target.className === 'edit' || e.target.dataset.action === 'edit') {
-            const id = parseInt(e.target.dataset.id)
-            const event = Event.findById(id)
-            document.querySelector('#update').innerHTML = event.renderUpdateForm()
+                const id = parseInt(e.target.dataset.id)
+                const event = Event.findById(id)
+                document.querySelector('#update').innerHTML = event.renderUpdateForm()
             }
         })
         
@@ -44,18 +44,17 @@ class App {
                 })
         })
 
-        const thisIsSomething = document.getElementById('delete')
-        console.log(thisIsSomething)
-            if (thisIsSomething) {
-                thisIsSomething.addEventListener('click', e => {
-                    const id = parseInt(e.target.dataset.id)
-                    const event = Event.findById(id)
 
-                    fetch(`http://localhost:3000/api/v1/events/${event.id}`, {
-                     method: 'DELETE'
+        document.querySelector('#events-list').addEventListener('click', e => {
+            if (e.target.className === 'delete' || e.target.dataset.action === 'delete') {
+                const id = parseInt(e.target.dataset.id)
+                const event = Event.findById(id)
+
+                fetch(`http://localhost:3000/api/v1/events/${event.id}`, {
+                 method: 'DELETE'
             })
-        })
-    }
+        }
+    })
 
-}
+    }
 }
