@@ -19,26 +19,26 @@ class App {
             e.preventDefault();
             const id = parseInt(e.target.dataset.id)
             const event = Event.findById(id)
-            console.log(event)
+            // console.log(event)
             const newName = e.target.querySelector('input').value
             const newDate = e.target.getElementsByTagName('p')[1].querySelector('input').value
-
-            const bodyJSON = {newName, newDate}
+            // console.log(newName, newDate)
+            // const bodyJSON = {newName, newDate}
+            // console.log(bodyJSON)
             fetch(`http://localhost:3000/api/v1/events/${event.id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
                     Accept: 'application/json',
                 },
-                body: JSON.stringify(bodyJSON),
+                body: JSON.stringify({
+                    name: newName,
+                    date: newDate
+                })
             })
                 .then(res => res.json())
-                // console.log(res.json())
                 .then(updatedEvent => {
-                    console.log(updatedEvent)
                     const event2 = Event.findById(updatedEvent.id)
-                    console.log('break')
-                    console.log(event2)
                     event2.update(updatedEvent)
                     this.addEvents()
                 })
