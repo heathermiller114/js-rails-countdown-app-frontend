@@ -41,6 +41,8 @@ class App {
                     document.querySelector('#update').innerHTML = ''
                 })
         })
+
+        document.getElementById('delete')
     }
 
 }
