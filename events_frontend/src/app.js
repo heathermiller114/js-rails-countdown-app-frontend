@@ -10,9 +10,11 @@ class App {
 
     attachEventListeners() {
         document.querySelector('#events-list').addEventListener('click', e => {
+            if (e.target.className === 'edit' || e.target.dataset.action === 'edit') {
             const id = parseInt(e.target.dataset.id)
             const event = Event.findById(id)
             document.querySelector('#update').innerHTML = event.renderUpdateForm()
+            }
         })
         
         document.querySelector('#update').addEventListener('submit', e => {
