@@ -10,8 +10,8 @@ class Event {
         return `
         <li>
             <h3 data-id=${this.id}>${this.name}
-                <button data-id=${this.id}>edit</button>
-                <button id=delete data-id=${this.id}>delete</button>
+                <button class="edit" data-action="edit" data-id=${this.id}>edit</button>
+                <button class="delete" data-action="delete" data-id=${this.id}>delete</button>
             </h3>
             <h4 data-id=${this.id}> Countdown: [countdown timer] until ${this.date}</h4>
         </li>`;
