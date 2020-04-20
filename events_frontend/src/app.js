@@ -39,6 +39,7 @@ class App {
                 .then(updatedEvent => {
                     const event2 = Event.findById(updatedEvent.id)
                     event2.update(updatedEvent)
+                    console.log(this)
                     this.addEvents()
                     document.querySelector('#update').innerHTML = ''
                 })
@@ -53,8 +54,14 @@ class App {
                 fetch(`http://localhost:3000/api/v1/events/${event.id}`, {
                  method: 'DELETE'
             })
-        }
-    })
+                .then((res) => {
+                    console.log(res)
+                    console.log(this)
+                    this.addEvents()
+                    console.log('complete')
+                })
+            }
+        })
 
     }
 }
