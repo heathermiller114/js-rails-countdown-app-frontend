@@ -42,7 +42,14 @@ class App {
                 })
         })
 
-        document.getElementById('delete')
+        document.getElementById('delete').addEventListener('click', e => {
+            const id = parseInt(e.target.dataset.id)
+            const event = Event.findById(id)
+
+            fetch(`http://localhost:3000/api/v1/events/${event.id}`, {
+                method: 'DELETE'
+            })
+        })
     }
 
 }
