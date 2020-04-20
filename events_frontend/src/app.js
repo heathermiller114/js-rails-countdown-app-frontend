@@ -42,14 +42,18 @@ class App {
                 })
         })
 
-        document.getElementById('delete').addEventListener('click', e => {
-            const id = parseInt(e.target.dataset.id)
-            const event = Event.findById(id)
+        const thisIsSomething = document.getElementById('delete')
+        console.log(thisIsSomething)
+            if (thisIsSomething) {
+                thisIsSomething.addEventListener('click', e => {
+                    const id = parseInt(e.target.dataset.id)
+                    const event = Event.findById(id)
 
-            fetch(`http://localhost:3000/api/v1/events/${event.id}`, {
-                method: 'DELETE'
+                    fetch(`http://localhost:3000/api/v1/events/${event.id}`, {
+                     method: 'DELETE'
             })
         })
     }
 
+}
 }
