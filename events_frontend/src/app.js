@@ -19,12 +19,9 @@ class App {
             e.preventDefault();
             const id = parseInt(e.target.dataset.id)
             const event = Event.findById(id)
-            // console.log(event)
             const newName = e.target.querySelector('input').value
             const newDate = e.target.getElementsByTagName('p')[1].querySelector('input').value
-            // console.log(newName, newDate)
-            // const bodyJSON = {newName, newDate}
-            // console.log(bodyJSON)
+
             fetch(`http://localhost:3000/api/v1/events/${event.id}`, {
                 method: 'PATCH',
                 headers: {
@@ -41,6 +38,7 @@ class App {
                     const event2 = Event.findById(updatedEvent.id)
                     event2.update(updatedEvent)
                     this.addEvents()
+                    document.querySelector('#update').innerHTML = ''
                 })
         })
     }
