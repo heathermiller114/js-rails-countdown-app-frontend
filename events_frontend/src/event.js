@@ -11,6 +11,7 @@ class Event {
         <li>
             <h3 data-id=${this.id}>${this.name}
                 <button data-id=${this.id}>edit</button>
+                <button data-id=${this.id}>delete</button>
             </h3>
             <h4 data-id=${this.id}> Countdown: [countdown timer] until ${this.date}</h4>
         </li>`;
