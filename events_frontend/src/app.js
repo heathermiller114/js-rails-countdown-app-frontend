@@ -93,7 +93,6 @@ class App {
                 // document.querySelector('#events-list').append(newEvent)
                 console.log("all done!")
             })
- //WHY WILL YOU NOT WORK
         })
     }
 }
