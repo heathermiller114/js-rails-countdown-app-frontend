@@ -57,7 +57,7 @@ class App {
                 .then((res) => {
                     console.log(res)
                     console.log(this)
-                    this.addEvents()
+                    this.addEvents() //this line is still not calling the function/rerendering
                     console.log('complete')
                 })
             }
