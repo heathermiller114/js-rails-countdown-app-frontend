@@ -8,6 +8,17 @@
     <script src="src/index.js" charset="utf-8"></script>
   </head>
   <body>
+    <form id="new-event-form" action="index.html" method="post">
+      <label for="name">Name: </label>
+      <input id="event-name" type="text" name="name" value="">
+
+      <label for="date">Date: </label>
+      <input id="event-date" type="text" name="date" value:"">
+      <!-- I want to format this data data -->
+
+      <button type="submit" name="button">Add New Event</button>
+    </form>
+
     <ul id='events-list'></ul>
     <div id='update'></div>
 
