@@ -63,5 +63,13 @@ class App {
             }
         })
 
+        document.querySelector('#new-event-form').addEventListener('submit', e => {
+            e.preventDefault()
+            // debugger
+            const name = e.target.querySelector('#event-name').value
+            const date = e.target.querySelector('#event-date').value
+            const newEvent = new Event({name, date})
+            console.log(newEvent)
+        })
     }
 }
