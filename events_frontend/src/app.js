@@ -41,7 +41,7 @@ class App {
                     event2.update(updatedEvent)
                     console.log(this)
                     debugger
-                    this.addEvents()
+                    this.addEvents() //why do you work but the others dont
                     document.querySelector('#update').innerHTML = ''
                 })
         })
@@ -58,10 +58,11 @@ class App {
                 .then((res) => {
                     console.log(res)
                     console.log(this)
-                    this.addEvents() //this line is still not calling the function/rerendering
+                     //this line is still not calling the function/rerendering
                     console.log('complete')
                 })
             }
+            this.addEvents() // why will you not work no matter where i put you
         })
 
         document.querySelector('#new-event-form').addEventListener('submit', e => {
@@ -84,10 +85,15 @@ class App {
             // debugger
             .then(res => res.json())
             .then(newEvent => {
-                console.log(newEvent)
-                debugger
-                this.addEvents() //why won't this work either
+                //console.log(newEvent)
+                //console.log(this)
+                this.addEvents()// debugger //why won't this work either
+                document.querySelector('#event-name').value = ""
+                document.querySelector('#event-date').value = ""
+                // document.querySelector('#events-list').append(newEvent)
+                console.log("all done!")
             })
+ //WHY WILL YOU NOT WORK
         })
     }
 }
