@@ -40,6 +40,7 @@ class App {
                     const event2 = Event.findById(updatedEvent.id)
                     event2.update(updatedEvent)
                     console.log(this)
+                    debugger
                     this.addEvents()
                     document.querySelector('#update').innerHTML = ''
                 })
@@ -68,8 +69,25 @@ class App {
             // debugger
             const name = e.target.querySelector('#event-name').value
             const date = e.target.querySelector('#event-date').value
-            const newEvent = new Event({name, date})
-            console.log(newEvent)
+
+            fetch('http://localhost:3000/api/v1/events',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: "application/json"
+                },
+                body: JSON.stringify({
+                    "name": name,
+                    "date": date
+                })
+            })
+            // debugger
+            .then(res => res.json())
+            .then(newEvent => {
+                console.log(newEvent)
+                debugger
+                this.addEvents() //why won't this work either
+            })
         })
     }
 }
