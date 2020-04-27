@@ -39,9 +39,7 @@ class App {
                 .then(updatedEvent => {
                     const event2 = Event.findById(updatedEvent.id)
                     event2.update(updatedEvent)
-                    console.log(this)
-                    debugger
-                    this.addEvents() //why do you work but the others dont
+                    this.addEvents()
                     document.querySelector('#update').innerHTML = ''
                 })
         })
@@ -69,7 +67,6 @@ class App {
 
         document.querySelector('#new-event-form').addEventListener('submit', e => {
             e.preventDefault()
-            // debugger
             const name = e.target.querySelector('#event-name').value
             const date = e.target.querySelector('#event-date').value
 
@@ -87,9 +84,8 @@ class App {
             // debugger
             .then(res => res.json())
             .then(newEvent => {
-                //console.log(newEvent)
-                //console.log(this)
-                this.addEvents()// debugger //why won't this work either
+                const newEventHTML = newEvent.renderEventItem()
+                console.log(newEventHTML)
                 document.querySelector('#event-name').value = ""
                 document.querySelector('#event-date').value = ""
                 // document.querySelector('#events-list').append(newEvent)
