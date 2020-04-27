@@ -50,7 +50,7 @@ class App {
         document.querySelector('#events-list').addEventListener('click', e => {
             if (e.target.className === 'delete' || e.target.dataset.action === 'delete') {
                 const id = parseInt(e.target.dataset.id)
-                const event = Event.findById(id)
+                // const event = Event.findById(id)
 
                 fetch(`http://localhost:3000/api/v1/events/${id}`, {
                  method: 'DELETE',
@@ -63,7 +63,7 @@ class App {
                  })
                 })
                 // debugger
-                const removeEvent = $(`li[data-id=${id}]`)
+                const removeEvent = document.getElementById(`${id}`)
                 removeEvent.remove()
             }
             // this.addEvents() // why will you not work no matter where i put you
