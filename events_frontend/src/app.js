@@ -63,10 +63,8 @@ class App {
                  })
                 })
                 // debugger
-                .then(res => res.json()
-                    // debugger
-                // const removeEvent = document.
-                )
+                const removeEvent = $(`li[data-id=${id}]`)
+                removeEvent.remove()
             }
             // this.addEvents() // why will you not work no matter where i put you
             //the event is deleted from the DB -- but does not delete from the page without refresh
