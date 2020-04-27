@@ -8,7 +8,7 @@ class Event {
 
     renderEventItem() {
         return `
-        <li>
+        <li data-id=${this.id}>
             <h3 data-id=${this.id}>${this.name}
                 <button class="edit" data-action="edit" data-id=${this.id}>edit</button>
                 <button class="delete" data-action="delete" data-id=${this.id}>delete</button>
