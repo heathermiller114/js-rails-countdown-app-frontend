@@ -83,13 +83,11 @@ class App {
             })
             // debugger
             .then(res => res.json())
-            .then(newEvent => {
-                const newEventHTML = newEvent.renderEventItem()
-                console.log(newEventHTML)
+            .then(newEventJson => {
+                new Event(newEventJson)
+                this.addEvents()
                 document.querySelector('#event-name').value = ""
                 document.querySelector('#event-date').value = ""
-                // document.querySelector('#events-list').append(newEvent)
-                console.log("all done!")
             })
         })
     }
