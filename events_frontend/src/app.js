@@ -2,6 +2,7 @@ class App {
 
     addEvents() {
         document.querySelector('#events-list').innerHTML = ''
+        // debugger
         Event.all.forEach(
             event => (document.querySelector('#events-list').innerHTML += event.renderEventItem())
         )
@@ -62,6 +63,10 @@ class App {
                 })
                 const removeEvent = document.getElementById(`${id}`)
                 removeEvent.remove()
+                debugger
+                Event.all.filter(event => event.id != `${id}`)
+                // debugger
+                // this.addEvents()
             }
         })
 
