@@ -62,12 +62,9 @@ class App {
                      "id": id
                  })
                 })
-                // debugger
                 const removeEvent = document.getElementById(`${id}`)
                 removeEvent.remove()
             }
-            // this.addEvents() // why will you not work no matter where i put you
-            //the event is deleted from the DB -- but does not delete from the page without refresh
         })
 
         document.querySelector('#new-event-form').addEventListener('submit', e => {
