@@ -52,17 +52,24 @@ class App {
                 const id = parseInt(e.target.dataset.id)
                 const event = Event.findById(id)
 
-                fetch(`http://localhost:3000/api/v1/events/${event.id}`, {
-                 method: 'DELETE'
-            })
-                .then((res) => {
-                    console.log(res)
-                    console.log(this)
-                     //this line is still not calling the function/rerendering
-                    console.log('complete')
+                fetch(`http://localhost:3000/api/v1/events/${id}`, {
+                 method: 'DELETE',
+                 headers: {
+                     "Content-Type": "application/json",
+                     "Accept": "application/json"
+                 },
+                 body: JSON.stringify({
+                     "id": id
+                 })
                 })
+                // debugger
+                .then(res => res.json()
+                    // debugger
+                // const removeEvent = document.
+                )
             }
-            this.addEvents() // why will you not work no matter where i put you
+            // this.addEvents() // why will you not work no matter where i put you
+            //the event is deleted from the DB -- but does not delete from the page without refresh
         })
 
         document.querySelector('#new-event-form').addEventListener('submit', e => {
