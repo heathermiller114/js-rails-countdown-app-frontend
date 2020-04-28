@@ -74,6 +74,7 @@ class App {
             e.preventDefault()
             const name = e.target.querySelector('#event-name').value
             const date = e.target.querySelector('#event-date').value
+            debugger
 
             fetch('http://localhost:3000/api/v1/events',{
                 method: 'POST',

@@ -41,6 +41,19 @@ class Event {
         this.name  = name;
         this.date = date;
     }
+
+    createDateObjects() {
+        const dateOfEvent = new Date(this.date)
+        const now = new Date()
+        var betweenDates = (dateOfEvent.getTime() - now.getTime())
+    }
+
+    turnMillisecondsIntoTimes(betweenDates) {
+        var days = Math.floor(betweenDates / (24*60*60*1000))
+        var hours = Math.floor()
+        var minutes = Math.floor()
+        var seconds = Math.floor()
+    }
 }
 
 Event.all = [];

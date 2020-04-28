@@ -1,5 +1,3 @@
 class Timer {
-    constructor(date) {
-        
-    }
+    //do i need you
 }
