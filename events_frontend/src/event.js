@@ -59,13 +59,12 @@ class Event {
         var minutes = Math.floor((hoursInMilliseconds)/(60*1000))
         var minutesInMilliseconds = betweenDates % (60*1000)
         var seconds = Math.floor((minutesInMilliseconds)/(1000))
-        console.log(days, hours, minutes, seconds)
 
         document.getElementById(this.id).querySelectorAll('h4.days')[0].innerHTML = `${days} days` 
         document.getElementById(this.id).querySelectorAll('h4.hours')[0].innerHTML = `${hours} hours`
         document.getElementById(this.id).querySelectorAll('h4.minutes')[0].innerHTML = `${minutes} minutes`
         document.getElementById(this.id).querySelectorAll('h4.seconds')[0].innerHTML = `${seconds} seconds`
-    }
+    };
 }
 
 Event.all = [];
