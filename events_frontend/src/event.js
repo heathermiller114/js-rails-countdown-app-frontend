@@ -13,7 +13,11 @@ class Event {
                 <button class="edit" data-action="edit" data-id=${this.id}>edit</button>
                 <button class="delete" data-action="delete" data-id=${this.id}>delete</button>
             </h3>
-            <h4 data-id=${this.id}> Countdown: [countdown timer] until ${this.date}</h4>
+            <h4 data-id=${this.id} class="days"> Countdown: _____ days</h4>
+            <h4 data-id=${this.id} class="hours"> hours</h4>
+            <h4 data-id=${this.id} class="minutes"> minutes</h4>
+            <h4 data-id=${this.id} class="seconds"> seconds</h4>
+            <h4 data-id=${this.id}>until ${this.date}</h4>
         </li>`;
     }
 
@@ -50,9 +54,18 @@ class Event {
 
     turnMillisecondsIntoTimes(betweenDates) {
         var days = Math.floor(betweenDates / (24*60*60*1000))
-        var hours = Math.floor()
-        var minutes = Math.floor()
-        var seconds = Math.floor()
+        var daysInMilliseconds = betweenDates % (24*60*60**1000)
+        var hours = Math.floor((daysInMilliseconds)/(60*60*1000))
+        var hoursInMilliseconds = betweenDates % (60*60*1000)
+        var minutes = Math.floor((hoursInMilliseconds)/(60*1000))
+        var minutesInMilliseconds = betweenDates % (60*1000)
+        var seconds = Math.floor((minutesInMilliseconds)/(1000))
+        console.log(days, hours, minutes, seconds)
+
+        document.getElementsByClassName('days').innerHTML = days
+        document.getElementsByClassName('hours').innerHTML = hours
+        document.getElementsByClassName('minutes').innerHTML = minutes
+        document.getElementsByClassName('seconds').innerHTML = seconds
     }
 }
 
