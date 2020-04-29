@@ -53,7 +53,7 @@ class Event {
         var betweenDates = (dateOfEvent.getTime() - now.getTime())
   
         var days = Math.floor(betweenDates / (24*60*60*1000))
-        var daysInMilliseconds = betweenDates % (24*60*60**1000)
+        var daysInMilliseconds = betweenDates % (24*60*60*1000)
         var hours = Math.floor((daysInMilliseconds)/(60*60*1000))
         var hoursInMilliseconds = betweenDates % (60*60*1000)
         var minutes = Math.floor((hoursInMilliseconds)/(60*1000))
