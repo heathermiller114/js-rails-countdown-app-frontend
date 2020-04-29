@@ -47,7 +47,7 @@ class Event {
     }
 
     createDateObjects() {
-        debugger
+        // debugger
         const dateOfEvent = new Date(this.date)
         const now = new Date()
         var betweenDates = (dateOfEvent.getTime() - now.getTime())
@@ -61,10 +61,10 @@ class Event {
         var seconds = Math.floor((minutesInMilliseconds)/(1000))
         console.log(days, hours, minutes, seconds)
 
-        document.getElementById(this.id).querySelectorAll('h4.days')[0].innerHTML = days
-        document.getElementById(this.id).querySelectorAll('h4.hours')[0].innerHTML = hours
-        document.getElementById(this.id).querySelectorAll('h4.minutes')[0].innerHTML = minutes
-        document.getElementById(this.id).querySelectorAll('h4.seconds')[0].innerHTML = seconds
+        document.getElementById(this.id).querySelectorAll('h4.days')[0].innerHTML = `${days} days` 
+        document.getElementById(this.id).querySelectorAll('h4.hours')[0].innerHTML = `${hours} hours`
+        document.getElementById(this.id).querySelectorAll('h4.minutes')[0].innerHTML = `${minutes} minutes`
+        document.getElementById(this.id).querySelectorAll('h4.seconds')[0].innerHTML = `${seconds} seconds`
     }
 }
 
