@@ -4,7 +4,8 @@ class App {
         document.querySelector('#events-list').innerHTML = ''
         // debugger
         Event.all.forEach(
-            event => (document.querySelector('#events-list').innerHTML += event.renderEventItem())
+            event => (document.querySelector('#events-list').innerHTML += event.renderEventItem(),
+            event.createDateObjects())
         )
     }
 
@@ -74,7 +75,7 @@ class App {
             e.preventDefault()
             const name = e.target.querySelector('#event-name').value
             const date = e.target.querySelector('#event-date').value
-            debugger
+            // debugger
 
             fetch('http://localhost:3000/api/v1/events',{
                 method: 'POST',

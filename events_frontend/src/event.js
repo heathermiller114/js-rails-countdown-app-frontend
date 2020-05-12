@@ -47,7 +47,6 @@ class Event {
     }
 
     createDateObjects() {
-        // debugger
         const dateOfEvent = new Date(this.date)
         const now = new Date()
         var betweenDates = (dateOfEvent.getTime() - now.getTime())
@@ -65,6 +64,7 @@ class Event {
         document.getElementById(this.id).querySelectorAll('h4.minutes')[0].innerHTML = `${minutes} minutes`
         document.getElementById(this.id).querySelectorAll('h4.seconds')[0].innerHTML = `${seconds} seconds`
     };
+
 }
 
 Event.all = [];
