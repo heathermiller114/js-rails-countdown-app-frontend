@@ -64,10 +64,9 @@ class App {
                 })
                 const removeEvent = document.getElementById(`${id}`)
                 removeEvent.remove()
-                debugger
+                debugger // trying to figure out why once deleted -- event will come back if a  new one is posted
                 Event.all.filter(event => event.id != `${id}`)
-                // debugger
-                // this.addEvents()
+ 
             }
         })
 
